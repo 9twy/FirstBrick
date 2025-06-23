@@ -1,0 +1,64 @@
+2025-06-22 10:05:25.049 +03:00 [INF] User profile is available. Using 'C:\Users\saeed\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-22 10:05:25.143 +03:00 [INF] Now listening on: http://localhost:5253
+2025-06-22 10:05:25.145 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-22 10:05:25.147 +03:00 [INF] Hosting environment: Development
+2025-06-22 10:05:25.148 +03:00 [INF] Content root path: C:\Users\saeed\villa-capital-projects\sukuk-investment-system\services\AccountService
+2025-06-22 10:14:08.881 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5253/swagger/v1/swagger.json - null null
+2025-06-22 10:14:09.023 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5253/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 143.1927ms
+2025-06-22 10:16:15.151 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5253/api/Users/login - application/json 65
+2025-06-22 10:16:15.160 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-22 10:16:15.211 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-06-22 10:16:15.216 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-22 10:16:15.219 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5253/api/Users/login - 401 0 null 67.4745ms
+2025-06-22 10:16:31.526 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5253/api/Users/login - application/json 65
+2025-06-22 10:16:31.532 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-06-22 10:16:31.533 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-22 10:16:31.534 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5253/api/Users/login - 401 0 null 7.5859ms
+2025-06-22 10:17:00.263 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5253/api/Users/login - application/json 66
+2025-06-22 10:17:00.268 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-06-22 10:17:00.270 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-22 10:17:00.271 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5253/api/Users/login - 401 0 null 7.5264ms
+2025-06-22 10:17:01.616 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5253/api/Users/login - application/json 66
+2025-06-22 10:17:01.620 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-06-22 10:17:01.621 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-22 10:17:01.622 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5253/api/Users/login - 401 0 null 5.9275ms
+2025-06-22 10:17:14.542 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5253/api/Users/login - application/json 66
+2025-06-22 10:17:14.547 +03:00 [INF] Executing endpoint 'UsersController.login (AccountService)'
+2025-06-22 10:17:14.569 +03:00 [INF] Route matched with {action = "login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(AccountService.Dtos.LoginDto) on controller UsersController (AccountService).
+2025-06-22 10:17:18.202 +03:00 [INF] Executed DbCommand (238ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FirstName", u."LastName", u."PasswordHash", u."PhoneNumber", u."Status"
+FROM "Users" AS u
+WHERE u."Email" = @__email_0
+LIMIT 1
+2025-06-22 10:17:18.353 +03:00 [INF] Executing CreatedAtRouteResult, writing value of type 'LoginResponseDto'.
+2025-06-22 10:17:18.380 +03:00 [INF] Executed action UsersController.login (AccountService) in 3802.7256ms
+2025-06-22 10:17:18.383 +03:00 [INF] Executed endpoint 'UsersController.login (AccountService)'
+2025-06-22 10:17:18.391 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5253/api/Users/login - 201 null application/json; charset=utf-8 3849.8558ms
+2025-06-22 11:38:34.115 +03:00 [INF] Application is shutting down...
+2025-06-22 11:38:41.343 +03:00 [INF] User profile is available. Using 'C:\Users\saeed\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-22 11:38:41.478 +03:00 [INF] Now listening on: http://localhost:5253
+2025-06-22 11:38:41.482 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-22 11:38:41.485 +03:00 [INF] Hosting environment: Development
+2025-06-22 11:38:41.487 +03:00 [INF] Content root path: C:\Users\saeed\villa-capital-projects\sukuk-investment-system\services\AccountService
+2025-06-22 11:42:06.832 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5253/api/Users/login - application/json 66
+2025-06-22 11:42:06.877 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-22 11:42:06.930 +03:00 [INF] Executing endpoint 'UsersController.login (AccountService)'
+2025-06-22 11:42:06.962 +03:00 [INF] Route matched with {action = "login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(AccountService.Dtos.LoginDto) on controller UsersController (AccountService).
+2025-06-22 11:42:15.834 +03:00 [INF] Executed DbCommand (592ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FirstName", u."LastName", u."PasswordHash", u."PhoneNumber", u."Status"
+FROM "Users" AS u
+WHERE u."Email" = @__email_0
+LIMIT 1
+2025-06-22 11:42:16.078 +03:00 [INF] Executing CreatedAtRouteResult, writing value of type 'LoginResponseDto'.
+2025-06-22 11:42:16.128 +03:00 [INF] Executed action UsersController.login (AccountService) in 9157.6522ms
+2025-06-22 11:42:16.136 +03:00 [INF] Executed endpoint 'UsersController.login (AccountService)'
+2025-06-22 11:42:16.148 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5253/api/Users/login - 201 null application/json; charset=utf-8 9319.8556ms
+2025-06-22 16:23:46.895 +03:00 [INF] User profile is available. Using 'C:\Users\saeed\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-22 16:23:47.103 +03:00 [INF] Now listening on: http://localhost:5253
+2025-06-22 16:23:47.106 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-22 16:23:47.108 +03:00 [INF] Hosting environment: Development
+2025-06-22 16:23:47.109 +03:00 [INF] Content root path: C:\Users\saeed\villa-capital-projects\sukuk-investment-system\services\AccountService

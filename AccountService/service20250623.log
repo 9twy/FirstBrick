@@ -1,0 +1,42 @@
+2025-06-23 12:00:55.900 +03:00 [INF] User profile is available. Using 'C:\Users\saeed\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-23 12:00:56.040 +03:00 [INF] Now listening on: http://localhost:5253
+2025-06-23 12:00:56.045 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-23 12:00:56.047 +03:00 [INF] Hosting environment: Development
+2025-06-23 12:00:56.049 +03:00 [INF] Content root path: C:\Users\saeed\villa-capital-projects\sukuk-investment-system\services\AccountService
+2025-06-23 12:00:59.647 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5253/api/Users/login - application/json 66
+2025-06-23 12:00:59.726 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-23 12:00:59.793 +03:00 [INF] Executing endpoint 'UsersController.login (AccountService)'
+2025-06-23 12:00:59.843 +03:00 [INF] Route matched with {action = "login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(AccountService.Dtos.LoginDto) on controller UsersController (AccountService).
+2025-06-23 12:01:05.215 +03:00 [INF] Executed DbCommand (270ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FirstName", u."LastName", u."PasswordHash", u."PhoneNumber", u."Status"
+FROM "Users" AS u
+WHERE u."Email" = @__email_0
+LIMIT 1
+2025-06-23 12:01:05.580 +03:00 [INF] Executing CreatedAtRouteResult, writing value of type 'LoginResponseDto'.
+2025-06-23 12:01:05.663 +03:00 [INF] Executed action UsersController.login (AccountService) in 5804.0281ms
+2025-06-23 12:01:05.677 +03:00 [INF] Executed endpoint 'UsersController.login (AccountService)'
+2025-06-23 12:01:05.696 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5253/api/Users/login - 201 null application/json; charset=utf-8 6051.9562ms
+2025-06-23 13:42:32.474 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5253/api/Users/login - application/json 66
+2025-06-23 13:42:32.481 +03:00 [INF] Executing endpoint 'UsersController.login (AccountService)'
+2025-06-23 13:42:32.484 +03:00 [INF] Route matched with {action = "login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(AccountService.Dtos.LoginDto) on controller UsersController (AccountService).
+2025-06-23 13:42:36.795 +03:00 [INF] Executed DbCommand (281ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FirstName", u."LastName", u."PasswordHash", u."PhoneNumber", u."Status"
+FROM "Users" AS u
+WHERE u."Email" = @__email_0
+LIMIT 1
+2025-06-23 13:42:36.867 +03:00 [INF] Executing CreatedAtRouteResult, writing value of type 'LoginResponseDto'.
+2025-06-23 13:42:36.871 +03:00 [INF] Executed action UsersController.login (AccountService) in 4384.4502ms
+2025-06-23 13:42:36.872 +03:00 [INF] Executed endpoint 'UsersController.login (AccountService)'
+2025-06-23 13:42:36.873 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5253/api/Users/login - 201 null application/json; charset=utf-8 4399.5097ms
+2025-06-23 15:14:41.353 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5253/api/Users/login - application/json 66
+2025-06-23 15:14:41.384 +03:00 [INF] Executing endpoint 'UsersController.login (AccountService)'
+2025-06-23 15:14:41.389 +03:00 [INF] Route matched with {action = "login", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] login(AccountService.Dtos.LoginDto) on controller UsersController (AccountService).
+2025-06-23 15:14:43.933 +03:00 [INF] Executed DbCommand (240ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FirstName", u."LastName", u."PasswordHash", u."PhoneNumber", u."Status"
+FROM "Users" AS u
+WHERE u."Email" = @__email_0
+LIMIT 1
+2025-06-23 15:14:44.008 +03:00 [INF] Executing CreatedAtRouteResult, writing value of type 'LoginResponseDto'.
+2025-06-23 15:14:44.015 +03:00 [INF] Executed action UsersController.login (AccountService) in 2624.1668ms
+2025-06-23 15:14:44.016 +03:00 [INF] Executed endpoint 'UsersController.login (AccountService)'
+2025-06-23 15:14:44.017 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5253/api/Users/login - 201 null application/json; charset=utf-8 2667.2558ms

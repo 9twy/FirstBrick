@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option csharp_namespace = "Protos.Grpc";
+
+service MakePaymentService {
+  rpc MakePayment (MakePaymentRequest) returns (MakePaymentResponse);
+}
+
+message MakePaymentRequest {
+  int32 userId = 1;
+  double amount = 2;
+  int32 projectId=3;
+}
+
+message MakePaymentResponse {
+  bool success = 1;
+  string message = 2;
+}

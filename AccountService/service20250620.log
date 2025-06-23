@@ -1,0 +1,438 @@
+2025-06-20 15:24:27.364 +03:00 [INF] User profile is available. Using 'C:\Users\saeed\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-20 15:24:27.493 +03:00 [INF] Now listening on: http://localhost:5253
+2025-06-20 15:24:27.497 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 15:24:27.499 +03:00 [INF] Hosting environment: Development
+2025-06-20 15:24:27.500 +03:00 [INF] Content root path: C:\Users\saeed\villa-capital-projects\sukuk-investment-system\services\AccountService
+2025-06-20 15:26:30.671 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5253/swagger/v1/swagger.json - null null
+2025-06-20 15:26:30.791 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5253/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 122.6465ms
+2025-06-20 15:26:55.635 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5253/api/Users/register - application/json 145
+2025-06-20 15:26:55.657 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-20 15:26:55.715 +03:00 [INF] Executing endpoint 'UsersController.Register (AccountService)'
+2025-06-20 15:26:55.755 +03:00 [INF] Route matched with {action = "Register", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(AccountService.Dtos.RegisterUserDto) on controller UsersController (AccountService).
+2025-06-20 15:27:01.067 +03:00 [ERR] Failed executing DbCommand (321ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FirstName", u."LastName", u."PasswordHash", u."PhoneNumber", u."Status"
+FROM "Users" AS u
+WHERE u."Email" = @__email_0
+LIMIT 1
+2025-06-20 15:27:01.104 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'UserDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column u.Status does not exist
+
+POSITION: 91
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.Status does not exist
+    Position: 91
+    File: parse_relation.c
+    Line: 3716
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column u.Status does not exist
+
+POSITION: 91
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.Status does not exist
+    Position: 91
+    File: parse_relation.c
+    Line: 3716
+    Routine: errorMissingColumn
+2025-06-20 15:27:01.127 +03:00 [INF] Executed action UsersController.Register (AccountService) in 5362.6735ms
+2025-06-20 15:27:01.132 +03:00 [INF] Executed endpoint 'UsersController.Register (AccountService)'
+2025-06-20 15:27:01.139 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Npgsql.PostgresException (0x80004005): 42703: column u.Status does not exist
+
+POSITION: 91
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at UserRepository.GetByEmailAsync(String email) in C:\Users\saeed\villa-capital-projects\sukuk-investment-system\services\AccountService\Repositories\UserRepository.cs:line 13
+   at UserService.RegisterUserAsync(RegisterUserDto registerUserDto) in C:\Users\saeed\villa-capital-projects\sukuk-investment-system\services\AccountService\Services\UserService.cs:line 31
+   at UsersController.Register(RegisterUserDto dto) in C:\Users\saeed\villa-capital-projects\sukuk-investment-system\services\AccountService\Controllers\UsersController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column u.Status does not exist
+    Position: 91
+    File: parse_relation.c
+    Line: 3716
+    Routine: errorMissingColumn
+2025-06-20 15:27:01.198 +03:00 [ERR] 42703: column u.Status does not exist
+
+POSITION: 91
+2025-06-20 15:27:01.291 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5253/api/Users/register - 500 null application/json; charset=utf-8 5656.8222ms
+2025-06-20 15:27:13.964 +03:00 [INF] Application is shutting down...
+2025-06-20 15:27:56.591 +03:00 [INF] Executed DbCommand (247ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-06-20 15:27:59.178 +03:00 [INF] Executed DbCommand (249ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+    "MigrationId" character varying(150) NOT NULL,
+    "ProductVersion" character varying(32) NOT NULL,
+    CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
+);
+2025-06-20 15:27:59.189 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-06-20 15:27:59.425 +03:00 [INF] Executed DbCommand (232ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+LOCK TABLE "__EFMigrationsHistory" IN ACCESS EXCLUSIVE MODE
+2025-06-20 15:27:59.668 +03:00 [INF] Executed DbCommand (238ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-06-20 15:27:59.675 +03:00 [INF] Applying migration '20250620122744_secondcreate'.
+2025-06-20 15:27:59.929 +03:00 [INF] Executed DbCommand (240ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "Users" ALTER COLUMN "PasswordHash" DROP NOT NULL;
+2025-06-20 15:28:00.196 +03:00 [INF] Executed DbCommand (265ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "Users" ADD "Status" integer NOT NULL DEFAULT 0;
+2025-06-20 15:28:00.455 +03:00 [INF] Executed DbCommand (249ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20250620122744_secondcreate', '9.0.6');
+2025-06-20 15:28:09.673 +03:00 [INF] User profile is available. Using 'C:\Users\saeed\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-20 15:28:09.759 +03:00 [INF] Now listening on: http://localhost:5253
+2025-06-20 15:28:09.765 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 15:28:09.767 +03:00 [INF] Hosting environment: Development
+2025-06-20 15:28:09.769 +03:00 [INF] Content root path: C:\Users\saeed\villa-capital-projects\sukuk-investment-system\services\AccountService
+2025-06-20 15:28:20.840 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5253/api/Users/register - application/json 145
+2025-06-20 15:28:20.867 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-20 15:28:20.888 +03:00 [INF] Executing endpoint 'UsersController.Register (AccountService)'
+2025-06-20 15:28:20.905 +03:00 [INF] Route matched with {action = "Register", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(AccountService.Dtos.RegisterUserDto) on controller UsersController (AccountService).
+2025-06-20 15:28:24.246 +03:00 [INF] Executed DbCommand (288ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FirstName", u."LastName", u."PasswordHash", u."PhoneNumber", u."Status"
+FROM "Users" AS u
+WHERE u."Email" = @__email_0
+LIMIT 1
+2025-06-20 15:28:24.689 +03:00 [INF] Executed DbCommand (268ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?', @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("Email", "FirstName", "LastName", "PasswordHash", "PhoneNumber", "Status")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5)
+RETURNING "Id";
+2025-06-20 15:28:24.826 +03:00 [INF] Executing CreatedAtRouteResult, writing value of type 'UserResponseDto'.
+2025-06-20 15:28:24.851 +03:00 [INF] Executed action UsersController.Register (AccountService) in 3939.7101ms
+2025-06-20 15:28:24.857 +03:00 [INF] Executed endpoint 'UsersController.Register (AccountService)'
+2025-06-20 15:28:24.865 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5253/api/Users/register - 201 null application/json; charset=utf-8 4025.7982ms
+2025-06-20 15:50:43.076 +03:00 [INF] Application is shutting down...
+2025-06-20 15:50:52.183 +03:00 [INF] User profile is available. Using 'C:\Users\saeed\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-20 15:50:52.316 +03:00 [INF] Now listening on: http://localhost:5253
+2025-06-20 15:50:52.320 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 15:50:52.321 +03:00 [INF] Hosting environment: Development
+2025-06-20 15:50:52.325 +03:00 [INF] Content root path: C:\Users\saeed\villa-capital-projects\sukuk-investment-system\services\AccountService
+2025-06-20 15:51:08.989 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5253/api/Users/register - application/json 145
+2025-06-20 15:51:09.029 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-20 15:51:09.053 +03:00 [INF] Executing endpoint 'UsersController.Register (AccountService)'
+2025-06-20 15:51:09.073 +03:00 [INF] Route matched with {action = "Register", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(AccountService.Dtos.RegisterUserDto) on controller UsersController (AccountService).
+2025-06-20 15:51:12.725 +03:00 [INF] Executed DbCommand (298ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FirstName", u."LastName", u."PasswordHash", u."PhoneNumber", u."Status"
+FROM "Users" AS u
+WHERE u."Email" = @__email_0
+LIMIT 1
+2025-06-20 15:51:12.807 +03:00 [INF] Executed action UsersController.Register (AccountService) in 3724.6542ms
+2025-06-20 15:51:12.813 +03:00 [INF] Executed endpoint 'UsersController.Register (AccountService)'
+2025-06-20 15:51:12.818 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+AccountService.Exceptions.AppException+EmailAlreadyExistsException: Email is already Exists.
+   at UserService.RegisterUserAsync(RegisterUserDto registerUserDto) in C:\Users\saeed\villa-capital-projects\sukuk-investment-system\services\AccountService\Services\UserService.cs:line 34
+   at UsersController.Register(RegisterUserDto dto) in C:\Users\saeed\villa-capital-projects\sukuk-investment-system\services\AccountService\Controllers\UsersController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-06-20 15:51:12.850 +03:00 [ERR] Email is already Exists.
+2025-06-20 15:51:12.914 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5253/api/Users/register - 409 null application/json; charset=utf-8 3926.0512ms
+2025-06-20 15:52:39.894 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-20 15:52:43.580 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+AccountService.Exceptions.AppException+EmailAlreadyExistsException: Email is already Exists.
+   at UserService.RegisterUserAsync(RegisterUserDto registerUserDto) in C:\Users\saeed\villa-capital-projects\sukuk-investment-system\services\AccountService\Services\UserService.cs:line 34
+   at UsersController.Register(RegisterUserDto dto) in C:\Users\saeed\villa-capital-projects\sukuk-investment-system\services\AccountService\Controllers\UsersController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-06-20 15:52:43.603 +03:00 [ERR] Email is already Exists.
+2025-06-20 15:53:12.041 +03:00 [INF] Application is shutting down...
+2025-06-20 15:53:15.970 +03:00 [INF] User profile is available. Using 'C:\Users\saeed\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-20 15:53:16.073 +03:00 [INF] Now listening on: http://localhost:5253
+2025-06-20 15:53:16.076 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 15:53:16.077 +03:00 [INF] Hosting environment: Development
+2025-06-20 15:53:16.078 +03:00 [INF] Content root path: C:\Users\saeed\villa-capital-projects\sukuk-investment-system\services\AccountService
+2025-06-20 15:53:19.452 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5253/api/Users/register - application/json 145
+2025-06-20 15:53:19.486 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-20 15:53:19.511 +03:00 [INF] Executing endpoint 'UsersController.Register (AccountService)'
+2025-06-20 15:53:19.533 +03:00 [INF] Route matched with {action = "Register", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(AccountService.Dtos.RegisterUserDto) on controller UsersController (AccountService).
+2025-06-20 15:53:23.921 +03:00 [INF] Executed DbCommand (404ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FirstName", u."LastName", u."PasswordHash", u."PhoneNumber", u."Status"
+FROM "Users" AS u
+WHERE u."Email" = @__email_0
+LIMIT 1
+2025-06-20 15:53:24.001 +03:00 [INF] Executed action UsersController.Register (AccountService) in 4459.2889ms
+2025-06-20 15:53:24.007 +03:00 [INF] Executed endpoint 'UsersController.Register (AccountService)'
+2025-06-20 15:53:24.011 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+AccountService.Exceptions.AppException+EmailAlreadyExistsException: Email is already Exists.
+   at UserService.RegisterUserAsync(RegisterUserDto registerUserDto) in C:\Users\saeed\villa-capital-projects\sukuk-investment-system\services\AccountService\Services\UserService.cs:line 34
+   at UsersController.Register(RegisterUserDto dto) in C:\Users\saeed\villa-capital-projects\sukuk-investment-system\services\AccountService\Controllers\UsersController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-06-20 15:53:24.031 +03:00 [ERR] Email is already Exists.
+2025-06-20 15:53:24.085 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5253/api/Users/register - 409 null application/json; charset=utf-8 4635.8917ms
+2025-06-20 19:28:32.293 +03:00 [INF] Application is shutting down...
+2025-06-20 19:36:55.731 +03:00 [INF] User profile is available. Using 'C:\Users\saeed\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-20 19:36:55.872 +03:00 [INF] Now listening on: http://localhost:5253
+2025-06-20 19:36:55.875 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 19:36:55.876 +03:00 [INF] Hosting environment: Development
+2025-06-20 19:36:55.877 +03:00 [INF] Content root path: C:\Users\saeed\villa-capital-projects\sukuk-investment-system\services\AccountService
+2025-06-20 19:37:30.793 +03:00 [INF] Application is shutting down...
+2025-06-20 19:37:34.117 +03:00 [INF] User profile is available. Using 'C:\Users\saeed\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-20 19:37:34.190 +03:00 [INF] Now listening on: http://localhost:5253
+2025-06-20 19:37:34.194 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 19:37:34.195 +03:00 [INF] Hosting environment: Development
+2025-06-20 19:37:34.195 +03:00 [INF] Content root path: C:\Users\saeed\villa-capital-projects\sukuk-investment-system\services\AccountService
+2025-06-20 19:37:45.801 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5253/api/Users/register - application/json 142
+2025-06-20 19:37:45.842 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-20 19:37:45.880 +03:00 [INF] Executing endpoint 'UsersController.Register (AccountService)'
+2025-06-20 19:37:45.902 +03:00 [INF] Route matched with {action = "Register", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(AccountService.Dtos.RegisterUserDto) on controller UsersController (AccountService).
+2025-06-20 19:37:49.767 +03:00 [INF] Executed DbCommand (266ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FirstName", u."LastName", u."PasswordHash", u."PhoneNumber", u."Status"
+FROM "Users" AS u
+WHERE u."Email" = @__email_0
+LIMIT 1
+2025-06-20 19:37:50.272 +03:00 [INF] Executed DbCommand (208ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?', @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("Email", "FirstName", "LastName", "PasswordHash", "PhoneNumber", "Status")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5)
+RETURNING "Id";
+2025-06-20 19:37:50.400 +03:00 [INF] Executing CreatedAtRouteResult, writing value of type 'UserResponseDto'.
+2025-06-20 19:37:50.447 +03:00 [INF] Executed action UsersController.Register (AccountService) in 4535.7205ms
+2025-06-20 19:37:50.457 +03:00 [INF] Executed endpoint 'UsersController.Register (AccountService)'
+2025-06-20 19:37:50.473 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5253/api/Users/register - 201 null application/json; charset=utf-8 4673.2153ms
+2025-06-20 19:38:29.178 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5253/api/Users/register - application/json 142
+2025-06-20 19:38:29.183 +03:00 [INF] Executing endpoint 'UsersController.Register (AccountService)'
+2025-06-20 19:38:29.186 +03:00 [INF] Route matched with {action = "Register", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(AccountService.Dtos.RegisterUserDto) on controller UsersController (AccountService).
+2025-06-20 19:38:29.409 +03:00 [INF] Executed DbCommand (196ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FirstName", u."LastName", u."PasswordHash", u."PhoneNumber", u."Status"
+FROM "Users" AS u
+WHERE u."Email" = @__email_0
+LIMIT 1
+2025-06-20 19:38:29.416 +03:00 [INF] Executed action UsersController.Register (AccountService) in 228.0311ms
+2025-06-20 19:38:29.417 +03:00 [INF] Executed endpoint 'UsersController.Register (AccountService)'
+2025-06-20 19:38:29.419 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+AccountService.Exceptions.AppException+EmailAlreadyExistsException: Email is already Exists.
+   at UserService.RegisterUserAsync(RegisterUserDto registerUserDto) in C:\Users\saeed\villa-capital-projects\sukuk-investment-system\services\AccountService\Services\UserService.cs:line 36
+   at UsersController.Register(RegisterUserDto dto) in C:\Users\saeed\villa-capital-projects\sukuk-investment-system\services\AccountService\Controllers\UsersController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-06-20 19:38:29.440 +03:00 [ERR] Email is already Exists.
+2025-06-20 19:38:29.459 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5253/api/Users/register - 409 null application/json; charset=utf-8 281.098ms
+2025-06-20 21:33:55.208 +03:00 [INF] Application is shutting down...
+2025-06-20 21:34:04.504 +03:00 [INF] User profile is available. Using 'C:\Users\saeed\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-20 21:34:04.578 +03:00 [INF] Now listening on: http://localhost:5253
+2025-06-20 21:34:04.581 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 21:34:04.583 +03:00 [INF] Hosting environment: Development
+2025-06-20 21:34:04.584 +03:00 [INF] Content root path: C:\Users\saeed\villa-capital-projects\sukuk-investment-system\services\AccountService
+2025-06-20 21:41:11.385 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5253/api/Users/register - application/json 143
+2025-06-20 21:41:11.409 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-20 21:41:11.428 +03:00 [INF] Executing endpoint 'UsersController.Register (AccountService)'
+2025-06-20 21:41:11.443 +03:00 [INF] Route matched with {action = "Register", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(AccountService.Dtos.RegisterUserDto) on controller UsersController (AccountService).
+2025-06-20 21:41:14.713 +03:00 [INF] Executed DbCommand (224ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FirstName", u."LastName", u."PasswordHash", u."PhoneNumber", u."Status"
+FROM "Users" AS u
+WHERE u."Email" = @__email_0
+LIMIT 1
+2025-06-20 21:41:15.068 +03:00 [INF] Executed DbCommand (200ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?', @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("Email", "FirstName", "LastName", "PasswordHash", "PhoneNumber", "Status")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5)
+RETURNING "Id";
+2025-06-20 21:41:15.141 +03:00 [INF] Executing CreatedAtRouteResult, writing value of type 'UserResponseDto'.
+2025-06-20 21:41:15.160 +03:00 [INF] Executed action UsersController.Register (AccountService) in 3712.7435ms
+2025-06-20 21:41:15.167 +03:00 [INF] Executed endpoint 'UsersController.Register (AccountService)'
+2025-06-20 21:41:15.176 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5253/api/Users/register - 201 null application/json; charset=utf-8 3792.9415ms
+2025-06-20 21:46:37.606 +03:00 [INF] Application is shutting down...
+2025-06-20 21:46:41.677 +03:00 [INF] User profile is available. Using 'C:\Users\saeed\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-20 21:46:41.764 +03:00 [INF] Now listening on: http://localhost:5253
+2025-06-20 21:46:41.766 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 21:46:41.767 +03:00 [INF] Hosting environment: Development
+2025-06-20 21:46:41.768 +03:00 [INF] Content root path: C:\Users\saeed\villa-capital-projects\sukuk-investment-system\services\AccountService
+2025-06-20 21:48:15.041 +03:00 [INF] Executed DbCommand (240ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FirstName", u."LastName", u."PasswordHash", u."PhoneNumber", u."Status"
+FROM "Users" AS u
+WHERE u."Id" = @__userId_0
+LIMIT 1
+2025-06-20 21:48:15.358 +03:00 [INF] Executed DbCommand (199ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?', @p1='?', @p2='?', @p3='?', @p4='?', @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "Email" = @p0, "FirstName" = @p1, "LastName" = @p2, "PasswordHash" = @p3, "PhoneNumber" = @p4, "Status" = @p5
+WHERE "Id" = @p6;
+2025-06-20 21:48:15.589 +03:00 [INF] Executed DbCommand (192ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FirstName", u."LastName", u."PasswordHash", u."PhoneNumber", u."Status"
+FROM "Users" AS u
+WHERE u."Id" = @__userId_0
+LIMIT 1
+2025-06-20 21:48:15.792 +03:00 [INF] Executed DbCommand (197ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?', @p1='?', @p2='?', @p3='?', @p4='?', @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "Email" = @p0, "FirstName" = @p1, "LastName" = @p2, "PasswordHash" = @p3, "PhoneNumber" = @p4, "Status" = @p5
+WHERE "Id" = @p6;
+2025-06-20 21:48:16.043 +03:00 [INF] Executed DbCommand (196ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FirstName", u."LastName", u."PasswordHash", u."PhoneNumber", u."Status"
+FROM "Users" AS u
+WHERE u."Id" = @__userId_0
+LIMIT 1
+2025-06-20 21:48:16.260 +03:00 [INF] Executed DbCommand (213ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?', @p1='?', @p2='?', @p3='?', @p4='?', @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "Email" = @p0, "FirstName" = @p1, "LastName" = @p2, "PasswordHash" = @p3, "PhoneNumber" = @p4, "Status" = @p5
+WHERE "Id" = @p6;
+2025-06-20 21:48:20.586 +03:00 [INF] Application is shutting down...
+2025-06-20 21:48:23.587 +03:00 [INF] User profile is available. Using 'C:\Users\saeed\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-20 21:48:23.662 +03:00 [INF] Now listening on: http://localhost:5253
+2025-06-20 21:48:23.665 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 21:48:23.666 +03:00 [INF] Hosting environment: Development
+2025-06-20 21:48:23.667 +03:00 [INF] Content root path: C:\Users\saeed\villa-capital-projects\sukuk-investment-system\services\AccountService
+2025-06-20 21:48:26.599 +03:00 [INF] Executed DbCommand (225ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FirstName", u."LastName", u."PasswordHash", u."PhoneNumber", u."Status"
+FROM "Users" AS u
+WHERE u."Id" = @__userId_0
+LIMIT 1
+2025-06-20 21:48:26.910 +03:00 [INF] Executed DbCommand (207ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?', @p1='?', @p2='?', @p3='?', @p4='?', @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "Email" = @p0, "FirstName" = @p1, "LastName" = @p2, "PasswordHash" = @p3, "PhoneNumber" = @p4, "Status" = @p5
+WHERE "Id" = @p6;
+2025-06-20 21:48:27.138 +03:00 [INF] Executed DbCommand (204ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FirstName", u."LastName", u."PasswordHash", u."PhoneNumber", u."Status"
+FROM "Users" AS u
+WHERE u."Id" = @__userId_0
+LIMIT 1
+2025-06-20 21:48:27.383 +03:00 [INF] Executed DbCommand (239ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?', @p1='?', @p2='?', @p3='?', @p4='?', @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "Email" = @p0, "FirstName" = @p1, "LastName" = @p2, "PasswordHash" = @p3, "PhoneNumber" = @p4, "Status" = @p5
+WHERE "Id" = @p6;
+2025-06-20 21:48:27.701 +03:00 [INF] Executed DbCommand (266ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FirstName", u."LastName", u."PasswordHash", u."PhoneNumber", u."Status"
+FROM "Users" AS u
+WHERE u."Id" = @__userId_0
+LIMIT 1
+2025-06-20 21:48:27.978 +03:00 [INF] Executed DbCommand (273ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?', @p1='?', @p2='?', @p3='?', @p4='?', @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "Email" = @p0, "FirstName" = @p1, "LastName" = @p2, "PasswordHash" = @p3, "PhoneNumber" = @p4, "Status" = @p5
+WHERE "Id" = @p6;
+2025-06-20 21:55:38.040 +03:00 [INF] Application is shutting down...
+2025-06-20 21:55:45.239 +03:00 [INF] User profile is available. Using 'C:\Users\saeed\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-20 21:55:45.331 +03:00 [INF] Now listening on: http://localhost:5253
+2025-06-20 21:55:45.335 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 21:55:45.336 +03:00 [INF] Hosting environment: Development
+2025-06-20 21:55:45.337 +03:00 [INF] Content root path: C:\Users\saeed\villa-capital-projects\sukuk-investment-system\services\AccountService
+2025-06-20 21:56:14.368 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5253/api/Users/register - application/json 143
+2025-06-20 21:56:14.410 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-20 21:56:14.462 +03:00 [INF] Executing endpoint 'UsersController.Register (AccountService)'
+2025-06-20 21:56:14.503 +03:00 [INF] Route matched with {action = "Register", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(AccountService.Dtos.RegisterUserDto) on controller UsersController (AccountService).
+2025-06-20 21:56:18.509 +03:00 [INF] Executed DbCommand (286ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FirstName", u."LastName", u."PasswordHash", u."PhoneNumber", u."Status"
+FROM "Users" AS u
+WHERE u."Email" = @__email_0
+LIMIT 1
+2025-06-20 21:56:19.052 +03:00 [INF] Executed DbCommand (212ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?', @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("Email", "FirstName", "LastName", "PasswordHash", "PhoneNumber", "Status")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5)
+RETURNING "Id";
+2025-06-20 21:56:19.175 +03:00 [INF] Executing CreatedAtRouteResult, writing value of type 'UserResponseDto'.
+2025-06-20 21:56:19.214 +03:00 [INF] Executed action UsersController.Register (AccountService) in 4701.9735ms
+2025-06-20 21:56:19.222 +03:00 [INF] Executed endpoint 'UsersController.Register (AccountService)'
+2025-06-20 21:56:19.238 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5253/api/Users/register - 201 null application/json; charset=utf-8 4871.9106ms
+2025-06-20 21:56:22.969 +03:00 [INF] Executed DbCommand (195ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."FirstName", u."LastName", u."PasswordHash", u."PhoneNumber", u."Status"
+FROM "Users" AS u
+WHERE u."Id" = @__userId_0
+LIMIT 1
+2025-06-20 21:56:23.204 +03:00 [INF] Executed DbCommand (225ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?', @p1='?', @p2='?', @p3='?', @p4='?', @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "Email" = @p0, "FirstName" = @p1, "LastName" = @p2, "PasswordHash" = @p3, "PhoneNumber" = @p4, "Status" = @p5
+WHERE "Id" = @p6;
+2025-06-20 21:57:18.936 +03:00 [INF] Application is shutting down...
+2025-06-20 21:57:30.057 +03:00 [INF] User profile is available. Using 'C:\Users\saeed\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-20 21:57:30.127 +03:00 [INF] Now listening on: http://localhost:5253
+2025-06-20 21:57:30.130 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 21:57:30.131 +03:00 [INF] Hosting environment: Development
+2025-06-20 21:57:30.132 +03:00 [INF] Content root path: C:\Users\saeed\villa-capital-projects\sukuk-investment-system\services\AccountService
+2025-06-20 21:57:44.264 +03:00 [INF] Application is shutting down...
